@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHRC – Saad Halimi Rehabilitation Center | Tripoli, Lebanon</title>
+  <meta name="description" content="Premier rehabilitation center in Tripoli, Lebanon. Isokinetic therapy, Acupuncture, Osteopathy, Thermography, Women's Health and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #0a3d4a;
+      --navy-mid:  #0d5060;
+      --blue:      #0899b2;
+      --blue-lt:   #12b5d0;
+      --accent:    #ffffff;
+      --pale:      #e8f8fb;
+      --white:     #ffffff;
+      --gray-bg:   #f4fbfc;
+      --text:      #0d2830;
+      --text-mid:  #2e5f6b;
+      --text-soft: #6a9aa5;
+      --border:    rgba(8,153,178,0.15);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'Inter', system-ui, sans-serif;
+      --nav-h: 68px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); overflow-x: hidden; }
+    a { text-decoration: none; }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--navy); height: 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px;
+      border-bottom: 1px solid rgba(8,153,178,0.3);
+    }
+    .topbar-left { font-size: 11.5px; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
+    .topbar-right { display: flex; align-items: center; gap: 18px; }
+    .tb-socials { display: flex; gap: 12px; }
+    .tb-socials a { color: rgba(255,255,255,0.4); transition: color .2s; display: flex; align-items: center; }
+    .tb-socials a:hover { color: var(--accent); }
+    .tb-socials svg { width: 14px; height: 14px; fill: currentColor; }
+    .tb-phone { font-size: 11.5px; color: rgba(255,255,255,0.5); }
+    .tb-phone a { color: #7de8f5; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      height: var(--nav-h); background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; padding: 0 40px; gap: 32px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .nav-logo-badge {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1.5px solid var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 13px; color: var(--blue);
+    }
+    .nav-logo-name { font-family: var(--serif); font-size: 16px; color: var(--navy); line-height: 1.1; }
+    .nav-logo-sub  { font-size: 9.5px; color: var(--text-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .nav-menu { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 5px;
+      padding: 8px 13px; border-radius: 4px;
+      font-size: 13px; color: var(--text-mid);
+      transition: color .2s, background .2s; cursor: pointer; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--blue); background: var(--pale); }
+    .nav-link svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    .dropdown {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 6px; min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 300; padding: 8px 0;
+    }
+    .nav-item:hover .dropdown { display: block; }
+    .dropdown a {
+      display: block; padding: 9px 20px;
+      font-size: 13px; color: var(--text-mid);
+      transition: background .15s, color .15s;
+    }
+    .dropdown a:hover { background: var(--pale); color: var(--blue); }
+    .dd-label {
+      padding: 6px 20px 3px; font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    .dd-hr { border: none; border-top: 1px solid var(--border); margin: 6px 0; }
+
+    .nav-actions { margin-left: auto; }
+    .btn-book {
+      background: var(--blue); color: var(--white);
+      padding: 8px 20px; border-radius: 4px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: background .2s; white-space: nowrap; display: inline-block;
+    }
+    .btn-book:hover { background: var(--navy); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); }
+
+    .mobile-nav {
+      display: none; flex-direction: column;
+      position: absolute; top: var(--nav-h); left: 0; right: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 12px 24px; z-index: 199;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 11px 0; font-size: 14px; color: var(--text-mid); border-bottom: 1px solid var(--border); }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - var(--nav-h) - 36px);
+      background: var(--navy);
+      display: flex; align-items: center;
+      padding: 80px 40px; position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0; width: 44%;
+      background: rgba(8,153,178,0.2);
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-inner {
+      max-width: 1160px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(255,255,255,0.6); }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 400; line-height: 1.13;
+      color: var(--white); margin-bottom: 22px;
+    }
+    .hero-title em { font-style: italic; color: #7de8f5; }
+    .hero-lead {
+      font-size: 15px; color: rgba(255,255,255,0.58);
+      line-height: 1.85; max-width: 500px; margin-bottom: 36px; font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-hp {
+      background: var(--white); color: var(--navy);
+      padding: 13px 30px; border-radius: 4px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: opacity .2s; display: inline-block;
+    }
+    .btn-hp:hover { opacity: .88; }
+    .btn-ho {
+      border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.82);
+      padding: 13px 30px; border-radius: 4px;
+      font-size: 12px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: border-color .2s, color .2s; display: inline-block;
+    }
+    .btn-ho:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09); border-radius: 6px; overflow: hidden;
+    }
+    .hero-panel-hd {
+      background: rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding: 16px 22px;
+      font-family: var(--serif); font-size: 15px; color: var(--white);
+    }
+    .hero-panel-row {
+      display: flex; align-items: center; gap: 13px;
+      padding: 11px 22px; border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 13px; color: rgba(255,255,255,0.72);
+    }
+    .hero-panel-row:last-child { border-bottom: none; }
+    .dot { width: 5px; height: 5px; border-radius: 50%; background: #7de8f5; flex-shrink: 0; }
+
+    /* SECTIONS */
+    .sec { padding: 88px 40px; }
+    .sec-inner { max-width: 1160px; margin: 0 auto; }
+    .sec-hd { margin-bottom: 48px; }
+    .eyebrow {
+      font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 13px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--blue); }
+    .sec-title {
+      font-family: var(--serif); font-size: clamp(26px, 3vw, 40px);
+      font-weight: 400; color: var(--navy); line-height: 1.2;
+    }
+    .sec-sub {
+      font-size: 14px; color: var(--text-mid); line-height: 1.8;
+      margin-top: 13px; max-width: 560px; font-weight: 300;
+    }
+
+    /* ABOUT */
+    .about { background: var(--gray-bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .about-body { font-size: 14.5px; color: var(--text-mid); line-height: 1.9; font-weight: 300; }
+    .about-body p + p { margin-top: 16px; }
+    .cred-list { display: flex; flex-direction: column; gap: 14px; }
+    .cred {
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);      border-radius: 0 4px 4px 0; padding: 16px 20px;
+    }
+    .cred-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .cred-detail { font-size: 12.5px; color: var(--text-soft); line-height: 1.6; }
+
+    /* SERVICES */
+    .services { background: var(--white); }
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    }
+    .svc {
+      background: var(--white); padding: 30px 26px;
+      transition: background .22s; display: flex; flex-direction: column;
+    }
+    .svc:hover { background: var(--pale); }
+    .svc-num { font-family: var(--serif); font-size: 12px; color: var(--text-soft); margin-bottom: 13px; letter-spacing: .06em; }
+    .svc-name { font-family: var(--serif); font-size: 20px; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
+    .svc-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.78; font-weight: 300; flex: 1; }
+    .svc-arrow { margin-top: 18px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+    .svc-arrow::after { content: ' →'; }
+
+    /* CONDITIONS */
+    .conditions { background: var(--navy); }
+    .conditions .eyebrow { color: #7de8f5; }
+    .conditions .eyebrow::before { background: #7de8f5; }
+    .conditions .sec-title { color: var(--white); }
+    .conditions .sec-sub { color: rgba(255,255,255,0.45); }
+    .cond-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .cond {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 22px 18px;
+      transition: background .2s, border-color .2s; cursor: pointer;
+    }
+    .cond:hover { background: rgba(8,153,178,0.22); border-color: rgba(8,153,178,0.45); }
+    .cond-title { font-family: var(--serif); font-size: 16px; color: var(--white); margin-bottom: 8px; }
+    .cond-svcs { font-size: 11.5px; color: rgba(255,255,255,0.38); line-height: 1.6; }
+    .cond-lnk { margin-top: 14px; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #7de8f5; }
+    .cond-lnk::after { content: ' →'; }
+
+    /* TEAM */
+    .team { background: var(--gray-bg); }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .team-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 6px; overflow: hidden; transition: border-color .2s;
+    }
+    .team-card:hover { border-color: var(--blue); }
+    .team-photo {
+      height: 190px; background: var(--pale);
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .team-initials { font-family: var(--serif); font-size: 44px; color: var(--blue); }
+    .team-info { padding: 22px; }
+    .team-name { font-family: var(--serif); font-size: 19px; color: var(--navy); margin-bottom: 4px; }
+    .team-role { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .team-creds { list-style: none; }
+    .team-creds li { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; font-weight: 300; padding-left: 14px; position: relative; margin-bottom: 3px; }
+    .team-creds li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-size: 10px; top: 2px; }
+
+    /* BOOKING */
+    .booking { background: var(--white); }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .info-list { display: flex; flex-direction: column; gap: 24px; }
+    .info-row { display: flex; gap: 16px; align-items: flex-start; }
+    .info-ico {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .info-ico svg { width: 17px; height: 17px; fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .info-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 4px; }
+    .info-val { font-size: 14px; color: var(--text); line-height: 1.55; }
+    .info-val a { color: var(--blue); }
+    .map-wrap { margin-top: 18px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+    .map-wrap iframe { display: block; width: 100%; height: 200px; }
+
+    .bk-form { display: flex; flex-direction: column; gap: 13px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .bk-form input,
+    .bk-form select,
+    .bk-form textarea {
+      width: 100%; padding: 12px 15px;
+      border: 1px solid var(--border); border-radius: 4px;
+      font-family: var(--sans); font-size: 13.5px; color: var(--text);
+      background: var(--white); outline: none; transition: border-color .2s;
+    }
+    .bk-form input:focus,
+    .bk-form select:focus,
+    .bk-form textarea:focus { border-color: var(--blue); }
+    .bk-form select { color: var(--text-mid); }
+    .bk-form textarea { resize: vertical; min-height: 110px; }
+    .bk-submit {
+      background: var(--blue); color: var(--white); border: none;
+      padding: 13px 26px; border-radius: 4px; cursor: pointer;
+      font-family: var(--sans); font-size: 12px; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase;
+      transition: background .2s; align-self: flex-start;
+    }
+    .bk-submit:hover { background: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); padding: 52px 40px 28px;
+      border-top: 1px solid rgba(8,153,178,0.25);
+    }
+    .ft-top {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 26px;
+    }
+    .ft-brand { font-family: var(--serif); font-size: 17px; color: var(--white); margin-bottom: 10px; }
+    .ft-desc { font-size: 12.5px; color: rgba(255,255,255,0.35); line-height: 1.75; font-weight: 300; }
+    .ft-col-title { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #7de8f5; margin-bottom: 14px; }
+    .ft-col a { display: block; font-size: 12.5px; color: rgba(255,255,255,0.4); margin-bottom: 8px; transition: color .2s; }
+    .ft-col a:hover { color: var(--white); }
+    .ft-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .ft-copy { font-size: 11.5px; color: rgba(255,255,255,0.22); }
+    .ft-soc { display: flex; gap: 14px; }
+    .ft-soc a { color: rgba(255,255,255,0.3); transition: color .2s; display: flex; }
+    .ft-soc a:hover { color: var(--accent); }
+    .ft-soc svg { width: 15px; height: 15px; fill: currentColor; }
+
+    /* WA float */
+    .wa {
+      position: fixed; bottom: 26px; right: 26px; z-index: 500;
+      width: 52px; height: 52px; border-radius: 50%; background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.22); transition: transform .2s;
+    }
+    .wa:hover { transform: scale(1.07); }
+    .wa svg { width: 25px; height: 25px; fill: white; }
+
+    /* Fade */
+    .fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .fade.on { opacity: 1; transform: none; }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .topbar, nav { padding: 0 20px; }
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 60px 20px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { display: none; }
+      .sec { padding: 60px 20px; }
+      .about-grid, .booking-grid { grid-template-columns: 1fr; gap: 36px; }
+      .svc-grid { grid-template-columns: repeat(2,1fr); }
+      .cond-grid { grid-template-columns: repeat(2,1fr); }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+      .ft-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .topbar { display: none; }
+      .svc-grid, .cond-grid, .team-grid { grid-template-columns: 1fr; }
+      .f-row { grid-template-columns: 1fr; }
+      .ft-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-left">Face to Nini Hospital, Hazem El Jisr, Tripoli, Lebanon</span>
+  <div class="topbar-right">
+    <div class="tb-socials">
+      <a href="https://facebook.com/shrchealth" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://instagram.com/shrchealth" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+      <a href="https://wa.me/961000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+    <span class="tb-phone">Call: <a href="tel:+961000000">+961 00 000 000</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-badge">SH</div>
+    <div>
+      <div class="nav-logo-name">SHRC</div>
+      <div class="nav-logo-sub">Rehabilitation Center</div>
+    </div>
+  </a>
+
+  <div class="nav-menu">
+    <div class="nav-item">
+      <div class="nav-link">About <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="dropdown">
+        <a href="#about">About SHRC</a>
+        <a href="#team">Our Team</a>
+        <a href="#booking">Contact Us</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-link">Services <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="dropdown">
+        <a href="#services">All Services</a>
+        <hr class="dd-hr"/>
+        <a href="#services">Isokinetic Therapy</a>
+        <a href="#services">Acupuncture</a>
+        <a href="#services">Osteopathy</a>
+        <a href="#services">Medical Thermography</a>
+        <a href="#services">Ergonomy</a>
+        <a href="#services">Women's Health</a>
+        <a href="#services">SkinPen Microneedling</a>
+        <a href="#services">Cupping Therapy</a>
+        <a href="#services">LPG Body Treatment</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-link">Conditions <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="dropdown" style="min-width:230px;">
+        <span class="dd-label">Musculoskeletal</span>
+        <a href="#conditions">Low Back Pain</a>
+        <a href="#conditions">Neck Pain</a>
+        <a href="#conditions">Knee Pain</a>
+        <a href="#conditions">Shoulder Pain</a>
+        <a href="#conditions">Hip Pain</a>
+        <hr class="dd-hr"/>
+        <span class="dd-label">Other conditions</span>
+        <a href="#conditions">Migraines &amp; Headaches</a>
+        <a href="#conditions">Women's Health</a>
+        <a href="#conditions">Sports Injuries</a>
+        <a href="#conditions">Post-Surgical Recovery</a>
+      </div>
+    </div>
+    <a class="nav-link" href="#booking">Contact</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="#booking" class="btn-book">Book Now</a>
+  </div>
+  <div class="hamburger" onclick="toggleMobile()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#conditions" onclick="closeMobile()">Conditions</a>
+  <a href="#team" onclick="closeMobile()">Our Team</a>
+  <a href="#booking" onclick="closeMobile()">Book an Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="fade">
+      <div class="hero-eyebrow">Tripoli, Lebanon</div>
+      <h1 class="hero-title">Personalized Care.<br><em>Complete</em> Recovery.</h1>
+      <p class="hero-lead">At SHRC, we design treatment programs around your personal goals — combining modern physiotherapy, osteopathy, and acupuncture to help you return to the life you love.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-hp">Book an Appointment</a>
+        <a href="#services" class="btn-ho">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-panel fade" style="transition-delay:.12s">
+      <div class="hero-panel-hd">Our specialized services</div>
+      <div class="hero-panel-row"><div class="dot"></div>Isokinetic Therapy</div>
+      <div class="hero-panel-row"><div class="dot"></div>Acupuncture</div>
+      <div class="hero-panel-row"><div class="dot"></div>Osteopathy</div>
+      <div class="hero-panel-row"><div class="dot"></div>Medical Thermography</div>
+      <div class="hero-panel-row"><div class="dot"></div>Ergonomy &amp; Prevention</div>
+      <div class="hero-panel-row"><div class="dot"></div>Women's Health</div>
+      <div class="hero-panel-row"><div class="dot"></div>SkinPen Microneedling</div>
+      <div class="hero-panel-row"><div class="dot"></div>Cupping Therapy</div>
+      <div class="hero-panel-row"><div class="dot"></div>LPG Body Treatment</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="sec-inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="sec-hd">
+          <div class="eyebrow">About SHRC</div>
+          <h2 class="sec-title">A Legacy of Rehabilitation in Lebanon</h2>
+        </div>
+        <div class="about-body">
+          <p>Founded in 1990 by Dr. Mohamad Halimi, the Saad Halimi Rehabilitation Center has served patients across Tripoli and North Lebanon for over three decades.</p>
+          <p>Our purpose is to help you continue participating in your daily activities and life roles. We design treatment programs based on both the findings of our evaluation and your personal goals — because movement and function matter to every aspect of your life.</p>
+          <p>We provide therapeutic treatment wherever movement and function are threatened by aging, injury, disease, or environmental factors, with one goal: improving your quality of life.</p>
+          <p>SHRC is fully equipped with state-of-the-art rehabilitation and preventive technology, combining Western evidence-based medicine with effective Eastern therapeutic traditions for a truly integrative approach to care.</p>
+        </div>
+      </div>
+      <div class="cred-list fade" style="transition-delay:.1s">
+        <div class="cred">
+          <div class="cred-name">Dr. Saad M. Halimi — Director</div>
+          <div class="cred-detail">DPT · Master in Manual Therapy &amp; Osteopathy · Licensed Acupuncturist<br>USJ Lebanon · Tianjin TCM University, China · Harvard University, USA</div>
+        </div>
+        <div class="cred">
+          <div class="cred-name">Dr. Mohamad Halimi — Founder</div>
+          <div class="cred-detail">Diploma in Physiotherapy — School of Physiotherapy of Nantes, France, 1980. Over 40 years of clinical expertise in rehabilitation medicine.</div>
+        </div>
+        <div class="cred">
+          <div class="cred-name">HUMAC® NORM™ Isokinetic Technology</div>
+          <div class="cred-detail">The gold standard in isokinetic testing and rehabilitation — quantifying your progress with precision before and after every treatment course.</div>
+        </div>
+        <div class="cred">
+          <div class="cred-name">International Partnerships</div>
+          <div class="cred-detail">Collaboration with Harvard Vanguard, CSMi at Massachusetts General Hospital, and Tianjin TCM University — world-class expertise delivered in Tripoli.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec services" id="services">
+  <div class="sec-inner">
+    <div class="sec-hd fade">
+      <div class="eyebrow">What We Offer</div>
+      <h2 class="sec-title">Our Specialized Services</h2>
+      <p class="sec-sub">Each service is delivered by trained specialists and tailored to your condition and recovery goals.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc fade"><div class="svc-num">01</div><div class="svc-name">Isokinetic Therapy</div><div class="svc-desc">Using the HUMAC® NORM™ system, we quantify muscular deficits before and after treatment — designing precise rehabilitation programs and objectively measuring your recovery progress.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">02</div><div class="svc-name">Acupuncture</div><div class="svc-desc">Drawing from Chinese and Japanese traditions, our acupuncture releases active and latent trigger points, reduces pain pathways, and restores structural balance in the body.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">03</div><div class="svc-name">Osteopathy</div><div class="svc-desc">Treating the body holistically — addressing spinal blockages, pelvic torsion, and musculoskeletal dysfunction to relieve back pain, headaches, digestive issues, and dizziness.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">04</div><div class="svc-name">Medical Thermography</div><div class="svc-desc">Infrared imaging that visualizes pain and disease quickly and non-invasively. A powerful diagnostic tool that identifies the root cause of your symptoms before treatment begins.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">05</div><div class="svc-name">Ergonomy</div><div class="svc-desc">We evaluate your workplace, sleep habits, and daily activities to identify risk factors and recommend ergonomic solutions — helping you prevent musculoskeletal problems before they develop.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.12s"><div class="svc-num">06</div><div class="svc-name">Women's Health</div><div class="svc-desc">Specialized pelvic rehabilitation for urinary incontinence, uterine prolapse, dyspareunia, vaginismus, and menstruation-related back pain — in a confidential, caring environment.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade"><div class="svc-num">07</div><div class="svc-name">SkinPen Microneedling</div><div class="svc-desc">The first FDA-cleared microneedling device. Clinically proven to improve acne scars and wrinkles with minimal downtime and results lasting up to six months.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">08</div><div class="svc-name">Cupping Therapy</div><div class="svc-desc">Reduces inflammation and muscle tension, enhances blood circulation, stimulates the immune system, and provides effective relief for back pain and migraines.</div><div class="svc-arrow">Learn more</div></div>
+      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">09</div><div class="svc-name">LPG Body Treatment</div><div class="svc-desc">Reduces cellulite, tightens skin, boosts circulation and lymphatic drainage, sculpts the body and leaves skin visibly smoother, firmer, and more toned.</div><div class="svc-arrow">Learn more</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="sec conditions" id="conditions">
+  <div class="sec-inner">
+    <div class="sec-hd fade">
+      <div class="eyebrow">Conditions We Treat</div>
+      <h2 class="sec-title">Find Care for Your Condition</h2>
+      <p class="sec-sub">Not sure which service is right for you? Browse by condition and we'll guide you to the appropriate treatment.</p>
+    </div>
+    <div class="cond-grid">
+      <div class="cond fade"><div class="cond-title">Low Back Pain</div><div class="cond-svcs">Physiotherapy · Osteopathy · Acupuncture · Cupping</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.05s"><div class="cond-title">Neck Pain</div><div class="cond-svcs">Osteopathy · Acupuncture · Isokinetic · Ergonomy</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.1s"><div class="cond-title">Knee Pain</div><div class="cond-svcs">Isokinetic · Physiotherapy · Osteopathy</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.15s"><div class="cond-title">Shoulder Pain</div><div class="cond-svcs">Isokinetic · Physiotherapy · Acupuncture · Cupping</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.05s"><div class="cond-title">Migraines &amp; Headaches</div><div class="cond-svcs">Acupuncture · Osteopathy · Cupping Therapy</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.1s"><div class="cond-title">Sports Injuries</div><div class="cond-svcs">Isokinetic · Physiotherapy · Thermography</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.15s"><div class="cond-title">Post-Surgical Recovery</div><div class="cond-svcs">Isokinetic · Physiotherapy · Osteopathy</div><div class="cond-lnk">View treatments</div></div>
+      <div class="cond fade" style="transition-delay:.2s"><div class="cond-title">Women's Health</div><div class="cond-svcs">Pelvic Rehabilitation · Women's Health Program</div><div class="cond-lnk">View treatments</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec team" id="team">
+  <div class="sec-inner">
+    <div class="sec-hd fade">
+      <div class="eyebrow">Our Specialists</div>
+      <h2 class="sec-title">Meet the Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade">
+        <div class="team-photo"><div class="team-initials">MH</div></div>
+        <div class="team-info">
+          <div class="team-name">Dr. Mohamad Halimi</div>
+          <div class="team-role">Founder &amp; Physiotherapist</div>
+          <ul class="team-creds">
+            <li>Diploma in Physiotherapy — Nantes, France, 1980</li>
+            <li>Isokinetic specialist since 1987, L'Espoir de Lille-Hellemmes, France</li>
+            <li>Over 40 years of clinical expertise</li>
+          </ul>
+        </div>
+      </div>
+      <div class="team-card fade" style="transition-delay:.08s">
+        <div class="team-photo"><div class="team-initials">SH</div></div>
+        <div class="team-info">
+          <div class="team-name">Dr. Saad M. Halimi</div>
+          <div class="team-role">Director — DPT, Ms.Ost, L.Ac</div>
+          <ul class="team-creds">
+            <li>Bachelor in Physical Therapy, 2005</li>
+            <li>Master in Manual Therapy &amp; Osteopathy, 2008</li>
+            <li>Licensed Acupuncturist — USJ Lebanon</li>
+            <li>Tianjin TCM University, China · Harvard University, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="team-card fade" style="transition-delay:.16s">
+        <div class="team-photo"><div class="team-initials">IH</div></div>
+        <div class="team-info">
+          <div class="team-name">Imad M. Halimi</div>
+          <div class="team-role">Nurse &amp; Clinical Support</div>
+          <ul class="team-creds">
+            <li>Nursing degree — USJ Lebanon</li>
+            <li>Mechanical Ventilation Specialist</li>
+            <li>UPEC, France</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="sec booking" id="booking">
+  <div class="sec-inner">
+    <div class="sec-hd fade">
+      <div class="eyebrow">Get In Touch</div>
+      <h2 class="sec-title">Book an Appointment</h2>
+      <p class="sec-sub">Fill in the form and our team will contact you to confirm your appointment. You can also reach us directly by phone or WhatsApp.</p>
+    </div>
+    <div class="booking-grid">
+      <div class="info-list fade">
+        <div class="info-row">
+          <div class="info-ico">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Location</div>
+            <div class="info-val">Face to Nini Hospital<br>Hazem El Jisr Street, Tripoli, Lebanon</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ico">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Phone &amp; WhatsApp</div>
+            <div class="info-val"><a href="tel:+961000000">+961 00 000 000</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-ico">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Opening Hours</div>
+            <div class="info-val">Monday – Friday: 8:00 AM – 7:00 PM<br>Saturday: 8:00 AM – 2:00 PM</div>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.5!2d35.831433!3d34.436079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc24af2e929c36c57!2sDr.%20Saad%20M.%20Halimi%20Rehabilitation%20Center!5e0!3m2!1sen!2slb!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="SHRC location"></iframe>
+        </div>
+      </div>
+
+      <form class="bk-form fade" style="transition-delay:.1s" onsubmit="submitForm(event)">
+        <div class="f-row">
+          <input type="text" placeholder="Full name" required />
+          <input type="tel" placeholder="Phone number" required />
+        </div>
+        <input type="email" placeholder="Email address (optional)" />
+        <select>
+          <option value="" disabled selected>Service you are interested in</option>
+          <option>Isokinetic Therapy</option>
+          <option>Acupuncture</option>
+          <option>Osteopathy</option>
+          <option>Medical Thermography</option>
+          <option>Ergonomy</option>
+          <option>Women's Health</option>
+          <option>SkinPen Microneedling</option>
+          <option>Cupping Therapy</option>
+          <option>LPG Body Treatment</option>
+          <option>Not sure — need guidance</option>
+        </select>
+        <input type="text" placeholder="Preferred day / time (e.g. Tuesday morning)" />
+        <textarea placeholder="Briefly describe your condition or any questions..."></textarea>
+        <button type="submit" class="bk-submit">Send Appointment Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">Saad Halimi Rehabilitation Center</div>
+      <p class="ft-desc">Comprehensive rehabilitation care in Tripoli, Lebanon — combining modern physiotherapy with evidence-based complementary medicine since 1990.</p>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Services</div>
+      <a href="#services">Isokinetic Therapy</a>
+      <a href="#services">Acupuncture</a>
+      <a href="#services">Osteopathy</a>
+      <a href="#services">Thermography</a>
+      <a href="#services">Women's Health</a>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Conditions</div>
+      <a href="#conditions">Low Back Pain</a>
+      <a href="#conditions">Neck Pain</a>
+      <a href="#conditions">Knee Pain</a>
+      <a href="#conditions">Migraines</a>
+      <a href="#conditions">Sports Injuries</a>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Contact</div>
+      <a href="tel:+961000000">+961 00 000 000</a>
+      <a href="https://wa.me/961000000">WhatsApp</a>
+      <a href="#booking">Book an Appointment</a>
+      <a href="https://maps.google.com/?q=34.436079,35.831433" target="_blank">Get Directions</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">© 2025 SHRC — Saad Halimi Rehabilitation Center, Tripoli, Lebanon</span>
+    <div class="ft-soc">
+      <a href="https://facebook.com/shrchealth" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://instagram.com/shrchealth" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://wa.me/961000000" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/961000000" class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+  function toggleMobile() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function closeMobile()  { document.getElementById('mobileNav').classList.remove('open'); }
+
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Request sent — we will contact you shortly';
+    btn.style.background = '#1b5e20';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
