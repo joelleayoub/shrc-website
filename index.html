@@ -11,10 +11,8 @@
   <style>
     :root {
       --navy:      #0a3d4a;
-      --navy-mid:  #0d5060;
       --blue:      #0899b2;
       --blue-lt:   #12b5d0;
-      --accent:    #ffffff;
       --pale:      #e8f8fb;
       --white:     #ffffff;
       --gray-bg:   #f4fbfc;
@@ -35,14 +33,13 @@
     .topbar {
       background: var(--navy); height: 36px;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px;
-      border-bottom: 1px solid rgba(8,153,178,0.3);
+      padding: 0 40px; border-bottom: 1px solid rgba(8,153,178,0.3);
     }
     .topbar-left { font-size: 11.5px; color: rgba(255,255,255,0.45); letter-spacing: 0.03em; }
     .topbar-right { display: flex; align-items: center; gap: 18px; }
     .tb-socials { display: flex; gap: 12px; }
     .tb-socials a { color: rgba(255,255,255,0.4); transition: color .2s; display: flex; align-items: center; }
-    .tb-socials a:hover { color: var(--accent); }
+    .tb-socials a:hover { color: #7de8f5; }
     .tb-socials svg { width: 14px; height: 14px; fill: currentColor; }
     .tb-phone { font-size: 11.5px; color: rgba(255,255,255,0.5); }
     .tb-phone a { color: #7de8f5; }
@@ -63,7 +60,6 @@
     }
     .nav-logo-name { font-family: var(--serif); font-size: 16px; color: var(--navy); line-height: 1.1; }
     .nav-logo-sub  { font-size: 9.5px; color: var(--text-soft); letter-spacing: 0.1em; text-transform: uppercase; }
-
     .nav-menu { display: flex; align-items: center; gap: 2px; flex: 1; }
     .nav-item { position: relative; }
     .nav-link {
@@ -74,7 +70,6 @@
     }
     .nav-link:hover { color: var(--blue); background: var(--pale); }
     .nav-link svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 2; }
-
     .dropdown {
       display: none; position: absolute; top: calc(100% + 6px); left: 0;
       background: var(--white); border: 1px solid var(--border);
@@ -82,19 +77,10 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 300; padding: 8px 0;
     }
     .nav-item:hover .dropdown { display: block; }
-    .dropdown a {
-      display: block; padding: 9px 20px;
-      font-size: 13px; color: var(--text-mid);
-      transition: background .15s, color .15s;
-    }
+    .dropdown a { display: block; padding: 9px 20px; font-size: 13px; color: var(--text-mid); transition: background .15s, color .15s; }
     .dropdown a:hover { background: var(--pale); color: var(--blue); }
-    .dd-label {
-      padding: 6px 20px 3px; font-size: 10px;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-soft);
-    }
+    .dd-label { padding: 6px 20px 3px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); }
     .dd-hr { border: none; border-top: 1px solid var(--border); margin: 6px 0; }
-
     .nav-actions { margin-left: auto; }
     .btn-book {
       background: var(--blue); color: var(--white);
@@ -103,10 +89,8 @@
       transition: background .2s; white-space: nowrap; display: inline-block;
     }
     .btn-book:hover { background: var(--navy); }
-
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); }
-
     .mobile-nav {
       display: none; flex-direction: column;
       position: absolute; top: var(--nav-h); left: 0; right: 0;
@@ -119,13 +103,11 @@
     /* HERO */
     .hero {
       min-height: calc(100vh - var(--nav-h) - 36px);
-      background: var(--navy);
-      display: flex; align-items: center;
+      background: var(--navy); display: flex; align-items: center;
       padding: 80px 40px; position: relative; overflow: hidden;
     }
     .hero::after {
-      content: '';
-      position: absolute; top: 0; right: 0; bottom: 0; width: 44%;
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 44%;
       background: rgba(8,153,178,0.2);
       clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
     }
@@ -140,48 +122,17 @@
       display: flex; align-items: center; gap: 12px;
     }
     .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(255,255,255,0.6); }
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(36px, 4.5vw, 58px);
-      font-weight: 400; line-height: 1.13;
-      color: var(--white); margin-bottom: 22px;
-    }
+    .hero-title { font-family: var(--serif); font-size: clamp(36px, 4.5vw, 58px); font-weight: 400; line-height: 1.13; color: var(--white); margin-bottom: 22px; }
     .hero-title em { font-style: italic; color: #7de8f5; }
-    .hero-lead {
-      font-size: 15px; color: rgba(255,255,255,0.58);
-      line-height: 1.85; max-width: 500px; margin-bottom: 36px; font-weight: 300;
-    }
+    .hero-lead { font-size: 15px; color: rgba(255,255,255,0.58); line-height: 1.85; max-width: 500px; margin-bottom: 36px; font-weight: 300; }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-hp {
-      background: var(--white); color: var(--navy);
-      padding: 13px 30px; border-radius: 4px;
-      font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-      transition: opacity .2s; display: inline-block;
-    }
+    .btn-hp { background: var(--white); color: var(--navy); padding: 13px 30px; border-radius: 4px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: opacity .2s; display: inline-block; }
     .btn-hp:hover { opacity: .88; }
-    .btn-ho {
-      border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.82);
-      padding: 13px 30px; border-radius: 4px;
-      font-size: 12px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase;
-      transition: border-color .2s, color .2s; display: inline-block;
-    }
-    .btn-ho:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hero-panel {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09); border-radius: 6px; overflow: hidden;
-    }
-    .hero-panel-hd {
-      background: rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      padding: 16px 22px;
-      font-family: var(--serif); font-size: 15px; color: var(--white);
-    }
-    .hero-panel-row {
-      display: flex; align-items: center; gap: 13px;
-      padding: 11px 22px; border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 13px; color: rgba(255,255,255,0.72);
-    }
+    .btn-ho { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.82); padding: 13px 30px; border-radius: 4px; font-size: 12px; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; transition: border-color .2s, color .2s; display: inline-block; }
+    .btn-ho:hover { border-color: #7de8f5; color: #7de8f5; }
+    .hero-panel { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 6px; overflow: hidden; }
+    .hero-panel-hd { background: rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 16px 22px; font-family: var(--serif); font-size: 15px; color: var(--white); }
+    .hero-panel-row { display: flex; align-items: center; gap: 13px; padding: 11px 22px; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 13px; color: rgba(255,255,255,0.72); }
     .hero-panel-row:last-child { border-bottom: none; }
     .dot { width: 5px; height: 5px; border-radius: 50%; background: #7de8f5; flex-shrink: 0; }
 
@@ -189,20 +140,10 @@
     .sec { padding: 88px 40px; }
     .sec-inner { max-width: 1160px; margin: 0 auto; }
     .sec-hd { margin-bottom: 48px; }
-    .eyebrow {
-      font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--blue); margin-bottom: 13px;
-      display: flex; align-items: center; gap: 10px;
-    }
+    .eyebrow { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 13px; display: flex; align-items: center; gap: 10px; }
     .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--blue); }
-    .sec-title {
-      font-family: var(--serif); font-size: clamp(26px, 3vw, 40px);
-      font-weight: 400; color: var(--navy); line-height: 1.2;
-    }
-    .sec-sub {
-      font-size: 14px; color: var(--text-mid); line-height: 1.8;
-      margin-top: 13px; max-width: 560px; font-weight: 300;
-    }
+    .sec-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-weight: 400; color: var(--navy); line-height: 1.2; }
+    .sec-sub { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-top: 13px; max-width: 560px; font-weight: 300; }
 
     /* ABOUT */
     .about { background: var(--gray-bg); }
@@ -210,30 +151,60 @@
     .about-body { font-size: 14.5px; color: var(--text-mid); line-height: 1.9; font-weight: 300; }
     .about-body p + p { margin-top: 16px; }
     .cred-list { display: flex; flex-direction: column; gap: 14px; }
-    .cred {
-      background: var(--white); border: 1px solid var(--border);
-      border-left: 3px solid var(--blue);      border-radius: 0 4px 4px 0; padding: 16px 20px;
-    }
+    .cred { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 0 4px 4px 0; padding: 16px 20px; }
     .cred-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
     .cred-detail { font-size: 12.5px; color: var(--text-soft); line-height: 1.6; }
 
     /* SERVICES */
     .services { background: var(--white); }
-    .svc-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
-    }
-    .svc {
-      background: var(--white); padding: 30px 26px;
-      transition: background .22s; display: flex; flex-direction: column;
-    }
-    .svc:hover { background: var(--pale); }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .svc { background: var(--white); display: flex; flex-direction: column; }
+    .svc-header { padding: 30px 26px 0; }
     .svc-num { font-family: var(--serif); font-size: 12px; color: var(--text-soft); margin-bottom: 13px; letter-spacing: .06em; }
     .svc-name { font-family: var(--serif); font-size: 20px; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
-    .svc-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.78; font-weight: 300; flex: 1; }
-    .svc-arrow { margin-top: 18px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
-    .svc-arrow::after { content: ' →'; }
+    .svc-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.78; font-weight: 300; }
+    .svc-toggle {
+      display: flex; align-items: center; gap: 6px;
+      margin: 18px 26px 0; padding-bottom: 24px;
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--blue); cursor: pointer; border: none; background: none;
+      font-family: var(--sans); transition: color .2s;
+    }
+    .svc-toggle:hover { color: var(--navy); }
+    .svc-toggle-icon { font-size: 16px; transition: transform .25s; line-height: 1; }
+    .svc-toggle.open .svc-toggle-icon { transform: rotate(45deg); }
+
+    /* expanded panel */
+    .svc-expanded {
+      display: none; border-top: 1px solid var(--border);
+      background: var(--pale);
+    }
+    .svc-expanded.open { display: block; }
+    .svc-img-wrap {
+      width: 100%; height: 180px; background: var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .svc-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .svc-img-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px; color: var(--text-soft); font-size: 12px; letter-spacing: .06em;
+      text-transform: uppercase; width: 100%; height: 100%;
+    }
+    .svc-img-placeholder svg { width: 32px; height: 32px; opacity: .4; stroke: var(--blue); fill: none; stroke-width: 1.5; }
+    .svc-detail { padding: 20px 26px 26px; }
+    .svc-detail-title { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .svc-detail-text { font-size: 13px; color: var(--text-mid); line-height: 1.8; font-weight: 300; }
+    .svc-detail-tech { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .svc-tag { font-size: 11px; background: var(--white); border: 1px solid var(--border); border-radius: 99px; padding: 3px 10px; color: var(--blue); }
+    .svc-wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 16px; background: #25d366; color: white;
+      padding: 9px 18px; border-radius: 4px; font-size: 12px;
+      font-weight: 500; letter-spacing: .04em; transition: opacity .2s;
+    }
+    .svc-wa-btn:hover { opacity: .88; }
+    .svc-wa-btn svg { width: 15px; height: 15px; fill: white; }
 
     /* CONDITIONS */
     .conditions { background: var(--navy); }
@@ -242,11 +213,7 @@
     .conditions .sec-title { color: var(--white); }
     .conditions .sec-sub { color: rgba(255,255,255,0.45); }
     .cond-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
-    .cond {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 22px 18px;
-      transition: background .2s, border-color .2s; cursor: pointer;
-    }
+    .cond { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 22px 18px; transition: background .2s, border-color .2s; cursor: pointer; }
     .cond:hover { background: rgba(8,153,178,0.22); border-color: rgba(8,153,178,0.45); }
     .cond-title { font-family: var(--serif); font-size: 16px; color: var(--white); margin-bottom: 8px; }
     .cond-svcs { font-size: 11.5px; color: rgba(255,255,255,0.38); line-height: 1.6; }
@@ -256,16 +223,9 @@
     /* TEAM */
     .team { background: var(--gray-bg); }
     .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-    .team-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 6px; overflow: hidden; transition: border-color .2s;
-    }
+    .team-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color .2s; }
     .team-card:hover { border-color: var(--blue); }
-    .team-photo {
-      height: 190px; background: var(--pale);
-      display: flex; align-items: center; justify-content: center;
-      border-bottom: 1px solid var(--border);
-    }
+    .team-photo { height: 190px; background: var(--pale); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
     .team-initials { font-family: var(--serif); font-size: 44px; color: var(--blue); }
     .team-info { padding: 22px; }
     .team-name { font-family: var(--serif); font-size: 19px; color: var(--navy); margin-bottom: 4px; }
@@ -274,16 +234,47 @@
     .team-creds li { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; font-weight: 300; padding-left: 14px; position: relative; margin-bottom: 3px; }
     .team-creds li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-size: 10px; top: 2px; }
 
+    /* SHOP */
+    .shop { background: var(--white); }
+    .shop-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .shop-card {
+      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .shop-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(8,153,178,0.1); }
+    .shop-img {
+      height: 180px; background: var(--pale);
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .shop-img svg { width: 40px; height: 40px; stroke: var(--text-soft); fill: none; stroke-width: 1.2; opacity: .5; }
+    .shop-img img { width: 100%; height: 100%; object-fit: cover; }
+    .shop-info { padding: 16px; }
+    .shop-name { font-family: var(--serif); font-size: 15px; color: var(--navy); margin-bottom: 5px; }
+    .shop-desc { font-size: 12px; color: var(--text-soft); line-height: 1.6; margin-bottom: 12px; }
+    .shop-price { font-size: 14px; font-weight: 500; color: var(--blue); margin-bottom: 10px; }
+    .shop-btn {
+      display: block; text-align: center;
+      background: var(--pale); color: var(--blue);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 8px; font-size: 12px; font-weight: 500;
+      transition: background .2s, color .2s;
+    }
+    .shop-btn:hover { background: var(--blue); color: var(--white); }
+    .shop-coming { 
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100%; min-height: 200px; padding: 24px;
+      color: var(--text-soft); text-align: center;
+    }
+    .shop-coming-icon { font-size: 32px; margin-bottom: 10px; opacity: .4; }
+    .shop-coming p { font-size: 13px; line-height: 1.6; }
+
     /* BOOKING */
-    .booking { background: var(--white); }
+    .booking { background: var(--gray-bg); }
     .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .info-list { display: flex; flex-direction: column; gap: 24px; }
     .info-row { display: flex; gap: 16px; align-items: flex-start; }
-    .info-ico {
-      width: 40px; height: 40px; flex-shrink: 0;
-      border: 1px solid var(--border); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .info-ico { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .info-ico svg { width: 17px; height: 17px; fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
     .info-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin-bottom: 4px; }
     .info-val { font-size: 14px; color: var(--text); line-height: 1.55; }
@@ -291,39 +282,38 @@
     .map-wrap { margin-top: 18px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
     .map-wrap iframe { display: block; width: 100%; height: 200px; }
 
-    .bk-form { display: flex; flex-direction: column; gap: 13px; }
-    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
-    .bk-form input,
-    .bk-form select,
-    .bk-form textarea {
-      width: 100%; padding: 12px 15px;
+    /* WHATSAPP FORM */
+    .wa-form-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .wa-form-title { font-family: var(--serif); font-size: 20px; color: var(--navy); margin-bottom: 6px; }
+    .wa-form-sub { font-size: 13px; color: var(--text-soft); margin-bottom: 22px; line-height: 1.6; }
+    .wa-form { display: flex; flex-direction: column; gap: 12px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wa-form input,
+    .wa-form select,
+    .wa-form textarea {
+      width: 100%; padding: 11px 14px;
       border: 1px solid var(--border); border-radius: 4px;
       font-family: var(--sans); font-size: 13.5px; color: var(--text);
       background: var(--white); outline: none; transition: border-color .2s;
     }
-    .bk-form input:focus,
-    .bk-form select:focus,
-    .bk-form textarea:focus { border-color: var(--blue); }
-    .bk-form select { color: var(--text-mid); }
-    .bk-form textarea { resize: vertical; min-height: 110px; }
-    .bk-submit {
-      background: var(--blue); color: var(--white); border: none;
-      padding: 13px 26px; border-radius: 4px; cursor: pointer;
-      font-family: var(--sans); font-size: 12px; font-weight: 500;
-      letter-spacing: .08em; text-transform: uppercase;
-      transition: background .2s; align-self: flex-start;
+    .wa-form input:focus, .wa-form select:focus, .wa-form textarea:focus { border-color: var(--blue); }
+    .wa-form select { color: var(--text-mid); }
+    .wa-form textarea { resize: vertical; min-height: 100px; }
+    .wa-submit-btn {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 14px;
+      background: #25d366; color: white; border: none;
+      border-radius: 4px; font-family: var(--sans);
+      font-size: 14px; font-weight: 500; cursor: pointer;
+      transition: background .2s; letter-spacing: .02em;
     }
-    .bk-submit:hover { background: var(--navy); }
+    .wa-submit-btn:hover { background: #1da855; }
+    .wa-submit-btn svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+    .wa-note { font-size: 11.5px; color: var(--text-soft); text-align: center; margin-top: 8px; }
 
     /* FOOTER */
-    footer {
-      background: var(--navy); padding: 52px 40px 28px;
-      border-top: 1px solid rgba(8,153,178,0.25);
-    }
-    .ft-top {
-      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
-      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 26px;
-    }
+    footer { background: var(--navy); padding: 52px 40px 28px; border-top: 1px solid rgba(8,153,178,0.25); }
+    .ft-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 26px; }
     .ft-brand { font-family: var(--serif); font-size: 17px; color: var(--white); margin-bottom: 10px; }
     .ft-desc { font-size: 12.5px; color: rgba(255,255,255,0.35); line-height: 1.75; font-weight: 300; }
     .ft-col-title { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #7de8f5; margin-bottom: 14px; }
@@ -333,24 +323,19 @@
     .ft-copy { font-size: 11.5px; color: rgba(255,255,255,0.22); }
     .ft-soc { display: flex; gap: 14px; }
     .ft-soc a { color: rgba(255,255,255,0.3); transition: color .2s; display: flex; }
-    .ft-soc a:hover { color: var(--accent); }
+    .ft-soc a:hover { color: #7de8f5; }
     .ft-soc svg { width: 15px; height: 15px; fill: currentColor; }
 
-    /* WA float */
-    .wa {
-      position: fixed; bottom: 26px; right: 26px; z-index: 500;
-      width: 52px; height: 52px; border-radius: 50%; background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.22); transition: transform .2s;
-    }
+    /* WA FLOAT */
+    .wa { position: fixed; bottom: 26px; right: 26px; z-index: 500; width: 52px; height: 52px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 14px rgba(0,0,0,0.22); transition: transform .2s; }
     .wa:hover { transform: scale(1.07); }
     .wa svg { width: 25px; height: 25px; fill: white; }
 
-    /* Fade */
+    /* FADE */
     .fade { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .fade.on { opacity: 1; transform: none; }
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 1000px) {
       .topbar, nav { padding: 0 20px; }
       .nav-menu { display: none; }
@@ -363,11 +348,12 @@
       .svc-grid { grid-template-columns: repeat(2,1fr); }
       .cond-grid { grid-template-columns: repeat(2,1fr); }
       .team-grid { grid-template-columns: repeat(2,1fr); }
+      .shop-grid { grid-template-columns: repeat(2,1fr); }
       .ft-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
       .topbar { display: none; }
-      .svc-grid, .cond-grid, .team-grid { grid-template-columns: 1fr; }
+      .svc-grid, .cond-grid, .team-grid, .shop-grid { grid-template-columns: 1fr; }
       .f-row { grid-template-columns: 1fr; }
       .ft-top { grid-template-columns: 1fr; }
     }
@@ -380,15 +366,9 @@
   <span class="topbar-left">Face to Nini Hospital, Hazem El Jisr, Tripoli, Lebanon</span>
   <div class="topbar-right">
     <div class="tb-socials">
-      <a href="https://facebook.com/shrchealth" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      </a>
-      <a href="https://instagram.com/shrchealth" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
-      </a>
-      <a href="https://wa.me/961000000" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
+      <a href="https://facebook.com/shrchealth" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://instagram.com/shrchealth" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+      <a href="https://wa.me/961000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
     </div>
     <span class="tb-phone">Call: <a href="tel:+961000000">+961 00 000 000</a></span>
   </div>
@@ -398,63 +378,38 @@
 <nav>
   <a href="#home" class="nav-logo">
     <div class="nav-logo-badge">SH</div>
-    <div>
-      <div class="nav-logo-name">SHRC</div>
-      <div class="nav-logo-sub">Rehabilitation Center</div>
-    </div>
+    <div><div class="nav-logo-name">SHRC</div><div class="nav-logo-sub">Rehabilitation Center</div></div>
   </a>
-
   <div class="nav-menu">
     <div class="nav-item">
       <div class="nav-link">About <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="dropdown">
-        <a href="#about">About SHRC</a>
-        <a href="#team">Our Team</a>
-        <a href="#booking">Contact Us</a>
-      </div>
+      <div class="dropdown"><a href="#about">About SHRC</a><a href="#team">Our Team</a><a href="#booking">Contact Us</a></div>
     </div>
     <div class="nav-item">
       <div class="nav-link">Services <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="dropdown">
-        <a href="#services">All Services</a>
-        <hr class="dd-hr"/>
-        <a href="#services">Isokinetic Therapy</a>
-        <a href="#services">Acupuncture</a>
-        <a href="#services">Osteopathy</a>
-        <a href="#services">Medical Thermography</a>
-        <a href="#services">Ergonomy</a>
-        <a href="#services">Women's Health</a>
-        <a href="#services">SkinPen Microneedling</a>
-        <a href="#services">Cupping Therapy</a>
-        <a href="#services">LPG Body Treatment</a>
+        <a href="#services">All Services</a><hr class="dd-hr"/>
+        <a href="#services">Isokinetic Therapy</a><a href="#services">Acupuncture</a><a href="#services">Osteopathy</a>
+        <a href="#services">Medical Thermography</a><a href="#services">Ergonomy</a><a href="#services">Women's Health</a>
+        <a href="#services">SkinPen Microneedling</a><a href="#services">Cupping Therapy</a><a href="#services">LPG Body Treatment</a>
       </div>
     </div>
     <div class="nav-item">
       <div class="nav-link">Conditions <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="dropdown" style="min-width:230px;">
         <span class="dd-label">Musculoskeletal</span>
-        <a href="#conditions">Low Back Pain</a>
-        <a href="#conditions">Neck Pain</a>
-        <a href="#conditions">Knee Pain</a>
-        <a href="#conditions">Shoulder Pain</a>
-        <a href="#conditions">Hip Pain</a>
-        <hr class="dd-hr"/>
-        <span class="dd-label">Other conditions</span>
-        <a href="#conditions">Migraines &amp; Headaches</a>
-        <a href="#conditions">Women's Health</a>
-        <a href="#conditions">Sports Injuries</a>
-        <a href="#conditions">Post-Surgical Recovery</a>
+        <a href="#conditions">Low Back Pain</a><a href="#conditions">Neck Pain</a><a href="#conditions">Knee Pain</a>
+        <a href="#conditions">Shoulder Pain</a><a href="#conditions">Hip Pain</a>
+        <hr class="dd-hr"/><span class="dd-label">Other conditions</span>
+        <a href="#conditions">Migraines &amp; Headaches</a><a href="#conditions">Women's Health</a>
+        <a href="#conditions">Sports Injuries</a><a href="#conditions">Post-Surgical Recovery</a>
       </div>
     </div>
+    <a class="nav-link" href="#shop">Shop</a>
     <a class="nav-link" href="#booking">Contact</a>
   </div>
-
-  <div class="nav-actions">
-    <a href="#booking" class="btn-book">Book Now</a>
-  </div>
-  <div class="hamburger" onclick="toggleMobile()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="nav-actions"><a href="#booking" class="btn-book">Book Now</a></div>
+  <div class="hamburger" onclick="toggleMobile()" aria-label="Open menu"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
@@ -462,6 +417,7 @@
   <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#conditions" onclick="closeMobile()">Conditions</a>
   <a href="#team" onclick="closeMobile()">Our Team</a>
+  <a href="#shop" onclick="closeMobile()">Shop</a>
   <a href="#booking" onclick="closeMobile()">Book an Appointment</a>
 </div>
 
@@ -497,10 +453,7 @@
   <div class="sec-inner">
     <div class="about-grid">
       <div class="fade">
-        <div class="sec-hd">
-          <div class="eyebrow">About SHRC</div>
-          <h2 class="sec-title">A Legacy of Rehabilitation in Lebanon</h2>
-        </div>
+        <div class="sec-hd"><div class="eyebrow">About SHRC</div><h2 class="sec-title">A Legacy of Rehabilitation in Lebanon</h2></div>
         <div class="about-body">
           <p>Founded in 1990 by Dr. Mohamad Halimi, the Saad Halimi Rehabilitation Center has served patients across Tripoli and North Lebanon for over three decades.</p>
           <p>Our purpose is to help you continue participating in your daily activities and life roles. We design treatment programs based on both the findings of our evaluation and your personal goals — because movement and function matter to every aspect of your life.</p>
@@ -509,22 +462,10 @@
         </div>
       </div>
       <div class="cred-list fade" style="transition-delay:.1s">
-        <div class="cred">
-          <div class="cred-name">Dr. Saad M. Halimi — Director</div>
-          <div class="cred-detail">DPT · Master in Manual Therapy &amp; Osteopathy · Licensed Acupuncturist<br>USJ Lebanon · Tianjin TCM University, China · Harvard University, USA</div>
-        </div>
-        <div class="cred">
-          <div class="cred-name">Dr. Mohamad Halimi — Founder</div>
-          <div class="cred-detail">Diploma in Physiotherapy — School of Physiotherapy of Nantes, France, 1980. Over 40 years of clinical expertise in rehabilitation medicine.</div>
-        </div>
-        <div class="cred">
-          <div class="cred-name">HUMAC® NORM™ Isokinetic Technology</div>
-          <div class="cred-detail">The gold standard in isokinetic testing and rehabilitation — quantifying your progress with precision before and after every treatment course.</div>
-        </div>
-        <div class="cred">
-          <div class="cred-name">International Partnerships</div>
-          <div class="cred-detail">Collaboration with Harvard Vanguard, CSMi at Massachusetts General Hospital, and Tianjin TCM University — world-class expertise delivered in Tripoli.</div>
-        </div>
+        <div class="cred"><div class="cred-name">Dr. Saad M. Halimi — Director</div><div class="cred-detail">DPT · Master in Manual Therapy &amp; Osteopathy · Licensed Acupuncturist<br>USJ Lebanon · Tianjin TCM University, China · Harvard University, USA</div></div>
+        <div class="cred"><div class="cred-name">Dr. Mohamad Halimi — Founder</div><div class="cred-detail">Diploma in Physiotherapy — School of Physiotherapy of Nantes, France, 1980. Over 40 years of clinical expertise.</div></div>
+        <div class="cred"><div class="cred-name">HUMAC® NORM™ Isokinetic Technology</div><div class="cred-detail">The gold standard in isokinetic testing and rehabilitation — quantifying progress with precision before and after every treatment course.</div></div>
+        <div class="cred"><div class="cred-name">International Partnerships</div><div class="cred-detail">Collaboration with Harvard Vanguard, CSMi at Massachusetts General Hospital, and Tianjin TCM University.</div></div>
       </div>
     </div>
   </div>
@@ -536,18 +477,184 @@
     <div class="sec-hd fade">
       <div class="eyebrow">What We Offer</div>
       <h2 class="sec-title">Our Specialized Services</h2>
-      <p class="sec-sub">Each service is delivered by trained specialists and tailored to your condition and recovery goals.</p>
+      <p class="sec-sub">Click "Learn More" on any service to see details about the technology and treatment approach.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc fade"><div class="svc-num">01</div><div class="svc-name">Isokinetic Therapy</div><div class="svc-desc">Using the HUMAC® NORM™ system, we quantify muscular deficits before and after treatment — designing precise rehabilitation programs and objectively measuring your recovery progress.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">02</div><div class="svc-name">Acupuncture</div><div class="svc-desc">Drawing from Chinese and Japanese traditions, our acupuncture releases active and latent trigger points, reduces pain pathways, and restores structural balance in the body.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">03</div><div class="svc-name">Osteopathy</div><div class="svc-desc">Treating the body holistically — addressing spinal blockages, pelvic torsion, and musculoskeletal dysfunction to relieve back pain, headaches, digestive issues, and dizziness.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">04</div><div class="svc-name">Medical Thermography</div><div class="svc-desc">Infrared imaging that visualizes pain and disease quickly and non-invasively. A powerful diagnostic tool that identifies the root cause of your symptoms before treatment begins.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">05</div><div class="svc-name">Ergonomy</div><div class="svc-desc">We evaluate your workplace, sleep habits, and daily activities to identify risk factors and recommend ergonomic solutions — helping you prevent musculoskeletal problems before they develop.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.12s"><div class="svc-num">06</div><div class="svc-name">Women's Health</div><div class="svc-desc">Specialized pelvic rehabilitation for urinary incontinence, uterine prolapse, dyspareunia, vaginismus, and menstruation-related back pain — in a confidential, caring environment.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade"><div class="svc-num">07</div><div class="svc-name">SkinPen Microneedling</div><div class="svc-desc">The first FDA-cleared microneedling device. Clinically proven to improve acne scars and wrinkles with minimal downtime and results lasting up to six months.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.04s"><div class="svc-num">08</div><div class="svc-name">Cupping Therapy</div><div class="svc-desc">Reduces inflammation and muscle tension, enhances blood circulation, stimulates the immune system, and provides effective relief for back pain and migraines.</div><div class="svc-arrow">Learn more</div></div>
-      <div class="svc fade" style="transition-delay:.08s"><div class="svc-num">09</div><div class="svc-name">LPG Body Treatment</div><div class="svc-desc">Reduces cellulite, tightens skin, boosts circulation and lymphatic drainage, sculpts the body and leaves skin visibly smoother, firmer, and more toned.</div><div class="svc-arrow">Learn more</div></div>
+
+      <!-- 01 Isokinetic -->
+      <div class="svc fade">
+        <div class="svc-header">
+          <div class="svc-num">01</div>
+          <div class="svc-name">Isokinetic Therapy</div>
+          <div class="svc-desc">Using the HUMAC® NORM™ system, we quantify muscular deficits before and after treatment — designing precise rehabilitation programs and objectively measuring your recovery.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap">
+            <!-- Replace src below with real image path e.g. src="images/isokinetic.jpg" -->
+            <div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div>
+          </div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">About the technology</div>
+            <div class="svc-detail-text">The HUMAC® NORM™ by CSMi is the gold standard in isokinetic evaluation and rehabilitation, trusted by major hospitals including Massachusetts General Hospital. It measures the force your muscles produce through a full range of motion — identifying exactly where weakness or imbalance exists. This data guides your entire treatment plan and objectively proves your progress at discharge.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">HUMAC® NORM™</span><span class="svc-tag">CSMi Technology</span><span class="svc-tag">Muscle testing</span><span class="svc-tag">Sport rehab</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20for%20Isokinetic%20Therapy." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Acupuncture -->
+      <div class="svc fade" style="transition-delay:.04s">
+        <div class="svc-header">
+          <div class="svc-num">02</div>
+          <div class="svc-name">Acupuncture</div>
+          <div class="svc-desc">Drawing from Chinese and Japanese traditions, our acupuncture releases active and latent trigger points, reduces pain pathways, and restores structural balance in the body.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Chinese &amp; Japanese Acupuncture</div>
+            <div class="svc-detail-text">Acupuncture increases the body's release of natural painkillers in the pain pathways of both the spinal cord and brain — modifying the way pain signals are received. Japanese Acupuncture specifically uses reflective points to release Active &amp; Latent Trigger Points, reducing structural imbalance. Beyond pain, it has positive effects on digestion, stress, sleep, and overall body function. Dr. Saad is licensed from both USJ Lebanon and Tianjin TCM University, China.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Japanese Acupuncture</span><span class="svc-tag">Trigger point release</span><span class="svc-tag">Pain management</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20Acupuncture%20appointment." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 Osteopathy -->
+      <div class="svc fade" style="transition-delay:.08s">
+        <div class="svc-header">
+          <div class="svc-num">03</div>
+          <div class="svc-name">Osteopathy</div>
+          <div class="svc-desc">Treating the body holistically — addressing spinal blockages, pelvic torsion, and musculoskeletal dysfunction to relieve back pain, headaches, digestive issues, and dizziness.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Holistic body treatment</div>
+            <div class="svc-detail-text">Osteopathy observes and treats the entire body as a connected system. Spinal blockages cause muscle tension, headaches, shoulder and back pain. Vertebral restrictions can lead to digestive disorders and heartburn. Pelvic torsion causes menstrual and bladder dysfunction. Manipulation uses measured movements of varying speed, force, and distance to reposition joints — reducing pain and restoring flexibility. Dr. Saad holds a Master's degree in Manual Therapy &amp; Osteopathy.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Spinal manipulation</span><span class="svc-tag">Pelvic alignment</span><span class="svc-tag">Holistic approach</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20Osteopathy%20appointment." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 Thermography -->
+      <div class="svc fade" style="transition-delay:.04s">
+        <div class="svc-header">
+          <div class="svc-num">04</div>
+          <div class="svc-name">Medical Thermography</div>
+          <div class="svc-desc">Infrared imaging that visualizes pain and disease quickly and non-invasively. A powerful diagnostic tool that identifies the root cause of your symptoms before treatment begins.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Visualize pain with infrared imaging</div>
+            <div class="svc-detail-text">Medical Thermography is an infrared imaging diagnostic technology capable of identifying pain and disease quickly and safely — without radiation. It detects temperature differences on the body surface caused by inflammation, nerve damage, or vascular issues. Think of it as making the invisible visible: you can literally see where pain originates before treatment starts, allowing for a more targeted and effective recovery plan.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Infrared imaging</span><span class="svc-tag">No radiation</span><span class="svc-tag">Pre-treatment diagnosis</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Thermography%20session." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 Ergonomy -->
+      <div class="svc fade" style="transition-delay:.08s">
+        <div class="svc-header">
+          <div class="svc-num">05</div>
+          <div class="svc-name">Ergonomy</div>
+          <div class="svc-desc">We evaluate your workplace, sleep habits, and daily activities to identify risk factors and recommend ergonomic solutions — preventing musculoskeletal problems before they develop.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Prevention before treatment</div>
+            <div class="svc-detail-text">Primary Prevention: we evaluate situations presenting risk factors for musculoskeletal pathologies — at work, at home, during sleep — and propose ergonomic tools and posture corrections. This keeps our clients from becoming patients. Secondary Prevention: once a pathology exists, we manage altered structures with ergonomic products adapted to the patient's specific situation — preventing relapse. Products cover: workplace (chair, desk, computer), sleeping position, daily activities, and environment (lighting, air conditioning).</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Workplace assessment</span><span class="svc-tag">Posture correction</span><span class="svc-tag">Injury prevention</span><span class="svc-tag">Ergonomic products</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20Ergonomy%20consultation." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 Women's Health -->
+      <div class="svc fade" style="transition-delay:.12s">
+        <div class="svc-header">
+          <div class="svc-num">06</div>
+          <div class="svc-name">Women's Health</div>
+          <div class="svc-desc">Specialized pelvic rehabilitation for urinary incontinence, uterine prolapse, dyspareunia, vaginismus, and menstruation-related back pain — in a confidential, caring environment.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Pelvic floor rehabilitation</div>
+            <div class="svc-detail-text">The rehabilitation of the pelvic muscles is essential to prevent or treat involuntary urine leakage caused by laughing, coughing, or exercise. We also treat feelings of heaviness or pressure in the lower abdomen (signs of uterine or bladder prolapse), pain during sexual intercourse (dyspareunia or vaginismus), and back pains synchronized with the menstrual cycle. Our role is to strengthen the pelvic muscles, improve their effectiveness, control leakage, and relieve pressure and pain — in a private, respectful setting.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Pelvic floor rehab</span><span class="svc-tag">Incontinence</span><span class="svc-tag">Women-only setting</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20the%20Women%27s%20Health%20program." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 SkinPen -->
+      <div class="svc fade">
+        <div class="svc-header">
+          <div class="svc-num">07</div>
+          <div class="svc-name">SkinPen Microneedling</div>
+          <div class="svc-desc">The first FDA-cleared microneedling device. Clinically proven to improve acne scars and wrinkles with minimal downtime and results lasting up to six months.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">FDA-cleared skin rejuvenation</div>
+            <div class="svc-detail-text">SkinPen is the world's first FDA-cleared microneedling device. It works by creating micro-channels in the skin that stimulate the body's natural collagen and elastin production — rejuvenating from the inside out. Clinically proven to improve the appearance of acne scars on the face and wrinkles on the neck, with results lasting up to six months. Treatment is quick with little to no downtime. Safe for all skin types.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">FDA-cleared</span><span class="svc-tag">Collagen induction</span><span class="svc-tag">Acne scars</span><span class="svc-tag">Anti-wrinkle</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20SkinPen%20Microneedling%20session." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08 Cupping -->
+      <div class="svc fade" style="transition-delay:.04s">
+        <div class="svc-header">
+          <div class="svc-num">08</div>
+          <div class="svc-name">Cupping Therapy</div>
+          <div class="svc-desc">Reduces inflammation and muscle tension, enhances blood circulation, stimulates the immune system, and provides effective relief for back pain and migraines.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">Traditional cupping therapy</div>
+            <div class="svc-detail-text">Cupping therapy uses suction cups placed on the skin to create negative pressure, drawing blood flow to the area. This enhances local circulation and oxygen delivery, removes toxins and stagnant blood from tissue, and stimulates the immune system. Effective for reducing back pain, migraines, muscle tension, and chronic inflammation. Increasingly popular among professional athletes worldwide for recovery.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">Blood circulation</span><span class="svc-tag">Detox</span><span class="svc-tag">Pain relief</span><span class="svc-tag">Muscle recovery</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Cupping%20Therapy%20session." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 LPG -->
+      <div class="svc fade" style="transition-delay:.08s">
+        <div class="svc-header">
+          <div class="svc-num">09</div>
+          <div class="svc-name">LPG Body Treatment</div>
+          <div class="svc-desc">Reduces cellulite, tightens skin, boosts circulation and lymphatic drainage, sculpts the body and leaves skin visibly smoother, firmer, and more toned.</div>
+        </div>
+        <button class="svc-toggle" onclick="toggleSvc(this)"><span class="svc-toggle-icon">+</span> Learn More</button>
+        <div class="svc-expanded">
+          <div class="svc-img-wrap"><div class="svc-img-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Photo coming soon</div></div>
+          <div class="svc-detail">
+            <div class="svc-detail-title">LPG Endermologie® body treatment</div>
+            <div class="svc-detail-text">LPG Endermologie® is a non-invasive mechanical massage technique using motorized rollers and suction to stimulate the skin and underlying tissue. It reduces cellulite by breaking down fat cell clusters, tightens loose skin, boosts lymphatic drainage to reduce bloating and water retention, and sculpts body contours. Muscles are deeply relaxed, leaving skin visibly smoother, firmer, and more toned. Approved by the FDA. Requires no downtime.</div>
+            <div class="svc-detail-tech"><span class="svc-tag">LPG Endermologie®</span><span class="svc-tag">Anti-cellulite</span><span class="svc-tag">Body sculpting</span><span class="svc-tag">Lymphatic drainage</span></div>
+            <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20LPG%20Body%20Treatment%20session." class="svc-wa-btn" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -555,11 +662,7 @@
 <!-- CONDITIONS -->
 <section class="sec conditions" id="conditions">
   <div class="sec-inner">
-    <div class="sec-hd fade">
-      <div class="eyebrow">Conditions We Treat</div>
-      <h2 class="sec-title">Find Care for Your Condition</h2>
-      <p class="sec-sub">Not sure which service is right for you? Browse by condition and we'll guide you to the appropriate treatment.</p>
-    </div>
+    <div class="sec-hd fade"><div class="eyebrow">Conditions We Treat</div><h2 class="sec-title">Find Care for Your Condition</h2><p class="sec-sub">Not sure which service is right for you? Browse by condition and we'll guide you to the right treatment.</p></div>
     <div class="cond-grid">
       <div class="cond fade"><div class="cond-title">Low Back Pain</div><div class="cond-svcs">Physiotherapy · Osteopathy · Acupuncture · Cupping</div><div class="cond-lnk">View treatments</div></div>
       <div class="cond fade" style="transition-delay:.05s"><div class="cond-title">Neck Pain</div><div class="cond-svcs">Osteopathy · Acupuncture · Isokinetic · Ergonomy</div><div class="cond-lnk">View treatments</div></div>
@@ -576,48 +679,41 @@
 <!-- TEAM -->
 <section class="sec team" id="team">
   <div class="sec-inner">
-    <div class="sec-hd fade">
-      <div class="eyebrow">Our Specialists</div>
-      <h2 class="sec-title">Meet the Team</h2>
-    </div>
+    <div class="sec-hd fade"><div class="eyebrow">Our Specialists</div><h2 class="sec-title">Meet the Team</h2></div>
     <div class="team-grid">
-      <div class="team-card fade">
-        <div class="team-photo"><div class="team-initials">MH</div></div>
-        <div class="team-info">
-          <div class="team-name">Dr. Mohamad Halimi</div>
-          <div class="team-role">Founder &amp; Physiotherapist</div>
-          <ul class="team-creds">
-            <li>Diploma in Physiotherapy — Nantes, France, 1980</li>
-            <li>Isokinetic specialist since 1987, L'Espoir de Lille-Hellemmes, France</li>
-            <li>Over 40 years of clinical expertise</li>
-          </ul>
+      <div class="team-card fade"><div class="team-photo"><div class="team-initials">MH</div></div><div class="team-info"><div class="team-name">Dr. Mohamad Halimi</div><div class="team-role">Founder &amp; Physiotherapist</div><ul class="team-creds"><li>Diploma in Physiotherapy — Nantes, France, 1980</li><li>Isokinetic specialist since 1987, France</li><li>Over 40 years of clinical expertise</li></ul></div></div>
+      <div class="team-card fade" style="transition-delay:.08s"><div class="team-photo"><div class="team-initials">SH</div></div><div class="team-info"><div class="team-name">Dr. Saad M. Halimi</div><div class="team-role">Director — DPT, Ms.Ost, L.Ac</div><ul class="team-creds"><li>Bachelor in Physical Therapy, 2005</li><li>Master in Manual Therapy &amp; Osteopathy, 2008</li><li>Licensed Acupuncturist — USJ Lebanon</li><li>Tianjin TCM University, China · Harvard, USA</li></ul></div></div>
+      <div class="team-card fade" style="transition-delay:.16s"><div class="team-photo"><div class="team-initials">IH</div></div><div class="team-info"><div class="team-name">Imad M. Halimi</div><div class="team-role">Nurse &amp; Clinical Support</div><ul class="team-creds"><li>Nursing degree — USJ Lebanon</li><li>Mechanical Ventilation Specialist</li><li>UPEC, France</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="sec shop" id="shop">
+  <div class="sec-inner">
+    <div class="sec-hd fade">
+      <div class="eyebrow">Products</div>
+      <h2 class="sec-title">Shop</h2>
+      <p class="sec-sub">Ergonomic products and rehabilitation accessories recommended by our specialists. More products coming soon.</p>
+    </div>
+    <div class="shop-grid">
+      <!-- Add real products here. Example structure shown below. Duplicate and fill in for each product. -->
+      <div class="shop-card fade">
+        <div class="shop-img">
+          <!-- To add a real product image: replace the SVG below with <img src="images/product1.jpg" alt="Product name"> -->
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <div class="shop-info">
+          <div class="shop-name">Product Name</div>
+          <div class="shop-desc">Short description of the product and its benefits.</div>
+          <div class="shop-price">$00</div>
+          <a href="https://wa.me/961000000?text=Hi%2C%20I%27d%20like%20to%20order%20a%20product%20from%20SHRC." class="shop-btn">Order on WhatsApp</a>
         </div>
       </div>
-      <div class="team-card fade" style="transition-delay:.08s">
-        <div class="team-photo"><div class="team-initials">SH</div></div>
-        <div class="team-info">
-          <div class="team-name">Dr. Saad M. Halimi</div>
-          <div class="team-role">Director — DPT, Ms.Ost, L.Ac</div>
-          <ul class="team-creds">
-            <li>Bachelor in Physical Therapy, 2005</li>
-            <li>Master in Manual Therapy &amp; Osteopathy, 2008</li>
-            <li>Licensed Acupuncturist — USJ Lebanon</li>
-            <li>Tianjin TCM University, China · Harvard University, USA</li>
-          </ul>
-        </div>
-      </div>
-      <div class="team-card fade" style="transition-delay:.16s">
-        <div class="team-photo"><div class="team-initials">IH</div></div>
-        <div class="team-info">
-          <div class="team-name">Imad M. Halimi</div>
-          <div class="team-role">Nurse &amp; Clinical Support</div>
-          <ul class="team-creds">
-            <li>Nursing degree — USJ Lebanon</li>
-            <li>Mechanical Ventilation Specialist</li>
-            <li>UPEC, France</li>
-          </ul>
-        </div>
-      </div>
+      <!-- Placeholder cards -->
+      <div class="shop-card fade" style="transition-delay:.06s"><div class="shop-coming"><div class="shop-coming-icon">📦</div><p>More products<br>coming soon</p></div></div>
+      <div class="shop-card fade" style="transition-delay:.12s"><div class="shop-coming"><div class="shop-coming-icon">📦</div><p>More products<br>coming soon</p></div></div>
+      <div class="shop-card fade" style="transition-delay:.18s"><div class="shop-coming"><div class="shop-coming-icon">📦</div><p>More products<br>coming soon</p></div></div>
     </div>
   </div>
 </section>
@@ -625,68 +721,39 @@
 <!-- BOOKING -->
 <section class="sec booking" id="booking">
   <div class="sec-inner">
-    <div class="sec-hd fade">
-      <div class="eyebrow">Get In Touch</div>
-      <h2 class="sec-title">Book an Appointment</h2>
-      <p class="sec-sub">Fill in the form and our team will contact you to confirm your appointment. You can also reach us directly by phone or WhatsApp.</p>
-    </div>
+    <div class="sec-hd fade"><div class="eyebrow">Get In Touch</div><h2 class="sec-title">Book an Appointment</h2><p class="sec-sub">Fill in the form below and we'll open WhatsApp for you with your details pre-filled — or reach us directly by phone.</p></div>
     <div class="booking-grid">
       <div class="info-list fade">
-        <div class="info-row">
-          <div class="info-ico">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <div class="info-label">Location</div>
-            <div class="info-val">Face to Nini Hospital<br>Hazem El Jisr Street, Tripoli, Lebanon</div>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-ico">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div>
-            <div class="info-label">Phone &amp; WhatsApp</div>
-            <div class="info-val"><a href="tel:+961000000">+961 00 000 000</a></div>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-ico">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <div class="info-label">Opening Hours</div>
-            <div class="info-val">Monday – Friday: 8:00 AM – 7:00 PM<br>Saturday: 8:00 AM – 2:00 PM</div>
-          </div>
-        </div>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.5!2d35.831433!3d34.436079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc24af2e929c36c57!2sDr.%20Saad%20M.%20Halimi%20Rehabilitation%20Center!5e0!3m2!1sen!2slb!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="SHRC location"></iframe>
-        </div>
+        <div class="info-row"><div class="info-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="info-label">Location</div><div class="info-val">Face to Nini Hospital<br>Hazem El Jisr Street, Tripoli, Lebanon</div></div></div>
+        <div class="info-row"><div class="info-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="info-label">Phone &amp; WhatsApp</div><div class="info-val"><a href="tel:+961000000">+961 00 000 000</a></div></div></div>
+        <div class="info-row"><div class="info-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="info-label">Opening Hours</div><div class="info-val">Monday – Friday: 8:00 AM – 7:00 PM<br>Saturday: 8:00 AM – 2:00 PM</div></div></div>
+        <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.5!2d35.831433!3d34.436079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc24af2e929c36c57!2sDr.%20Saad%20M.%20Halimi%20Rehabilitation%20Center!5e0!3m2!1sen!2slb!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="SHRC location"></iframe></div>
       </div>
 
-      <form class="bk-form fade" style="transition-delay:.1s" onsubmit="submitForm(event)">
-        <div class="f-row">
-          <input type="text" placeholder="Full name" required />
-          <input type="tel" placeholder="Phone number" required />
+      <div class="wa-form-wrap fade" style="transition-delay:.1s">
+        <div class="wa-form-title">Send us a message</div>
+        <div class="wa-form-sub">We'll reply on WhatsApp as soon as possible — usually within a few hours.</div>
+        <div class="wa-form">
+          <div class="f-row">
+            <input type="text" id="f-name" placeholder="Your name" />
+            <input type="tel" id="f-phone" placeholder="Phone number" />
+          </div>
+          <select id="f-service">
+            <option value="" disabled selected>Service you are interested in</option>
+            <option>Isokinetic Therapy</option><option>Acupuncture</option><option>Osteopathy</option>
+            <option>Medical Thermography</option><option>Ergonomy</option><option>Women's Health</option>
+            <option>SkinPen Microneedling</option><option>Cupping Therapy</option><option>LPG Body Treatment</option>
+            <option>Not sure — need guidance</option>
+          </select>
+          <input type="text" id="f-time" placeholder="Preferred day / time (e.g. Tuesday morning)" />
+          <textarea id="f-msg" placeholder="Briefly describe your condition or question..."></textarea>
+          <button class="wa-submit-btn" onclick="sendWhatsApp()">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+          <p class="wa-note">Tapping the button will open WhatsApp with your message pre-filled.</p>
         </div>
-        <input type="email" placeholder="Email address (optional)" />
-        <select>
-          <option value="" disabled selected>Service you are interested in</option>
-          <option>Isokinetic Therapy</option>
-          <option>Acupuncture</option>
-          <option>Osteopathy</option>
-          <option>Medical Thermography</option>
-          <option>Ergonomy</option>
-          <option>Women's Health</option>
-          <option>SkinPen Microneedling</option>
-          <option>Cupping Therapy</option>
-          <option>LPG Body Treatment</option>
-          <option>Not sure — need guidance</option>
-        </select>
-        <input type="text" placeholder="Preferred day / time (e.g. Tuesday morning)" />
-        <textarea placeholder="Briefly describe your condition or any questions..."></textarea>
-        <button type="submit" class="bk-submit">Send Appointment Request</button>
-      </form>
+      </div>
     </div>
   </div>
 </section>
@@ -694,33 +761,10 @@
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
-    <div>
-      <div class="ft-brand">Saad Halimi Rehabilitation Center</div>
-      <p class="ft-desc">Comprehensive rehabilitation care in Tripoli, Lebanon — combining modern physiotherapy with evidence-based complementary medicine since 1990.</p>
-    </div>
-    <div class="ft-col">
-      <div class="ft-col-title">Services</div>
-      <a href="#services">Isokinetic Therapy</a>
-      <a href="#services">Acupuncture</a>
-      <a href="#services">Osteopathy</a>
-      <a href="#services">Thermography</a>
-      <a href="#services">Women's Health</a>
-    </div>
-    <div class="ft-col">
-      <div class="ft-col-title">Conditions</div>
-      <a href="#conditions">Low Back Pain</a>
-      <a href="#conditions">Neck Pain</a>
-      <a href="#conditions">Knee Pain</a>
-      <a href="#conditions">Migraines</a>
-      <a href="#conditions">Sports Injuries</a>
-    </div>
-    <div class="ft-col">
-      <div class="ft-col-title">Contact</div>
-      <a href="tel:+961000000">+961 00 000 000</a>
-      <a href="https://wa.me/961000000">WhatsApp</a>
-      <a href="#booking">Book an Appointment</a>
-      <a href="https://maps.google.com/?q=34.436079,35.831433" target="_blank">Get Directions</a>
-    </div>
+    <div><div class="ft-brand">Saad Halimi Rehabilitation Center</div><p class="ft-desc">Comprehensive rehabilitation care in Tripoli, Lebanon — combining modern physiotherapy with evidence-based complementary medicine since 1990.</p></div>
+    <div class="ft-col"><div class="ft-col-title">Services</div><a href="#services">Isokinetic Therapy</a><a href="#services">Acupuncture</a><a href="#services">Osteopathy</a><a href="#services">Thermography</a><a href="#services">Women's Health</a></div>
+    <div class="ft-col"><div class="ft-col-title">Conditions</div><a href="#conditions">Low Back Pain</a><a href="#conditions">Neck Pain</a><a href="#conditions">Knee Pain</a><a href="#conditions">Migraines</a><a href="#conditions">Sports Injuries</a></div>
+    <div class="ft-col"><div class="ft-col-title">Contact</div><a href="tel:+961000000">+961 00 000 000</a><a href="https://wa.me/961000000">WhatsApp</a><a href="#booking">Book Appointment</a><a href="https://maps.google.com/?q=34.436079,35.831433" target="_blank">Get Directions</a></div>
   </div>
   <div class="ft-bottom">
     <span class="ft-copy">© 2025 SHRC — Saad Halimi Rehabilitation Center, Tripoli, Lebanon</span>
@@ -733,25 +777,46 @@
 </footer>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/961000000" class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<a href="https://wa.me/961000000" class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
+  // Fade in on scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
+  // Mobile menu
   function toggleMobile() { document.getElementById('mobileNav').classList.toggle('open'); }
   function closeMobile()  { document.getElementById('mobileNav').classList.remove('open'); }
 
-  function submitForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Request sent — we will contact you shortly';
-    btn.style.background = '#1b5e20';
-    btn.disabled = true;
+  // Service expand/collapse
+  function toggleSvc(btn) {
+    const panel = btn.nextElementSibling;
+    const isOpen = panel.classList.contains('open');
+    // Close all others
+    document.querySelectorAll('.svc-expanded.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.svc-toggle.open').forEach(b => b.classList.remove('open'));
+    // Toggle this one
+    if (!isOpen) { panel.classList.add('open'); btn.classList.add('open'); }
+  }
+
+  // WhatsApp form
+  function sendWhatsApp() {
+    const name    = document.getElementById('f-name').value.trim();
+    const phone   = document.getElementById('f-phone').value.trim();
+    const service = document.getElementById('f-service').value;
+    const time    = document.getElementById('f-time').value.trim();
+    const msg     = document.getElementById('f-msg').value.trim();
+    if (!name) { alert('Please enter your name.'); return; }
+    let text = `Hi, I'd like to book an appointment at SHRC.\n\n`;
+    if (name)    text += `Name: ${name}\n`;
+    if (phone)   text += `Phone: ${phone}\n`;
+    if (service) text += `Service: ${service}\n`;
+    if (time)    text += `Preferred time: ${time}\n`;
+    if (msg)     text += `\nMessage: ${msg}`;
+    // Replace 961000000 with the real number
+    window.open(`https://wa.me/961000000?text=${encodeURIComponent(text)}`, '_blank');
   }
 </script>
 </body>
