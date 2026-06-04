@@ -68,9 +68,10 @@
     .review-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 16px; color: var(--blue); flex-shrink: 0; }
     .review-name { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
     .review-date { font-size: 11.5px; color: var(--text-soft); }
-    .review-rstars { display: flex; gap: 2px; margin-bottom: 2px; }
+    .review-rstars { display: flex; gap: 2px; margin-bottom: 2px; color: #f5a623; font-size: 13px; line-height: 1; }
     .review-rstars svg { width: 13px; height: 13px; fill: #f5a623; }
     .review-text { font-size: 13.5px; color: var(--text-mid); line-height: 1.78; font-weight: 300; font-style: italic; flex: 1; }
+    .review-text p + p { margin-top: 10px; }
     .review-source { font-size: 11px; color: var(--text-soft); }
     .reviews-cta { margin-top: 28px; text-align: center; }
     .reviews-cta a { font-size: 13px; color: var(--blue); border: 1px solid var(--border); padding: 9px 20px; border-radius: 4px; display: inline-block; transition: background .2s; }
@@ -264,18 +265,23 @@
     </div>
     <div class="reviews-grid">
       <div class="review-card fade">
-        <div class="review-top"><div class="review-avatar">O</div><div><div class="review-rstars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="review-name">Olga Fleonova</div><div class="review-date">English Literature Professor, UOB</div></div></div>
-        <div class="review-text">"Whenever my family or I need rehabilitation, SHRC is our unquestionable choice. It offers a unique combination of Western and Eastern approaches, which has always worked effectively for us."</div>
+        <div class="review-top"><div class="review-avatar">A</div><div><div class="review-rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-name">Ahmed Frouk</div><div class="review-date">Google Review</div></div></div>
+        <div class="review-text">"Dr. Saad is highly professional with great expertise, showing compassion and care and allowing enough time for me to tell, express, and elaborate on my painful problems. The treatment plan was tailored for my case and when completed the results were beyond my expectations. The team is very passionate, helpful, and did their best to help me become comfortable and relaxed during sessions. The center itself is very calm and soothing with modern and high quality equipment. A great experience indeed."</div>
         <div class="review-source">Google Review</div>
       </div>
       <div class="review-card fade" style="transition-delay:.07s">
-        <div class="review-top"><div class="review-avatar">P</div><div><div class="review-rstars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="review-name">Patient review</div><div class="review-date">Google Review</div></div></div>
-        <div class="review-text">"Replace this with a real review from your Google Business profile. Copy and paste the patient name and their exact words here."</div>
+        <div class="review-top"><div class="review-avatar">M</div><div><div class="review-rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-name">m.nahdi al mawas</div><div class="review-date">Google Review</div></div></div>
+        <div class="review-text"><p>"I would like to extend my sincere thanks to everyone at SHRC Rehabilitation Center for the outstanding care and service I received. The entire team made sure I felt comfortable, supported, and well-informed throughout my experience."</p><p>"Their attention to detail and commitment to patient well-being truly set them apart. I was especially impressed by how organized and smoothly everything was handled. A special thank you to Dr. Saad Halimi for his exceptional care and dedication. His professionalism, clear communication, and genuine concern for his patients made me feel truly cared for."</p></div>
         <div class="review-source">Google Review</div>
       </div>
       <div class="review-card fade" style="transition-delay:.14s">
-        <div class="review-top"><div class="review-avatar">P</div><div><div class="review-rstars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="review-name">Patient review</div><div class="review-date">Google Review</div></div></div>
-        <div class="review-text">"Replace this with a real review from your Google Business profile. Copy and paste the patient name and their exact words here."</div>
+        <div class="review-top"><div class="review-avatar">T</div><div><div class="review-rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-name">tala khatib</div><div class="review-date">Google Review</div></div></div>
+        <div class="review-text">"I highly recommend Dr. Saad, an exceptional physiotherapist who combines deep knowledge with genuine care. His guidance and treatment helped me recover with ease. His professionalism, patience, and attentiveness made a real difference in my session."</div>
+        <div class="review-source">Google Review</div>
+      </div>
+      <div class="review-card fade" style="transition-delay:.21s">
+        <div class="review-top"><div class="review-avatar">C</div><div><div class="review-rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-name">chaza ghandour</div><div class="review-date">Google Review</div></div></div>
+        <div class="review-text"><p>"SHRC Health by Dr. Halimi is a very unique experience. I have been going to this clinic for many years. The first time I went, I had severe shoulder pain. He took his time to assess the situation and then he planned a specific program for me which was diversified."</p><p>"Since years, every time I come to Lebanon, the first thing I do is take an appointment at SHRC. His machine is very modern, you don't get bored. He does acupuncture as well. Last year, I did a full body thermography which is crucial for everyone to do. I highly recommend it."</p></div>
         <div class="review-source">Google Review</div>
       </div>
     </div>
